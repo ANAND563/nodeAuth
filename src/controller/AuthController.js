@@ -33,7 +33,7 @@ exports.register = async (req, res) => {
                     return res.status(409).json({ message: "Username already taken. Please choose a different username." });
                 }
 
-                const hashedPassword = await bcrypt.hash(password, 10);
+                const hashedPassword = await bcrypt.hash(password, 11);
 
                 const sql = "INSERT INTO users (name, username, email, mobile, address, city, state, zip, country, image, status, password) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
 
